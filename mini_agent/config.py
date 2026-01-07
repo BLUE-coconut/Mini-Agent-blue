@@ -71,6 +71,14 @@ class AgentConfig(BaseModel):
     workspace_dir: str = "./workspace"
     system_prompt_path: str = "system_prompt.md"
 
+class MCPConfig(BaseModel):
+    """MCP (Model Context Protocol) timeout configuration"""
+
+    connect_timeout: float = 10.0  # Connection timeout (seconds)
+    execute_timeout: float = 60.0  # Tool execution timeout (seconds)
+    sse_read_timeout: float = 120.0  # SSE read timeout (seconds)
+
+
 
 class ToolsConfig(BaseModel):
     """Tools configuration"""
